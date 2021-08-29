@@ -49,8 +49,12 @@ def configure_paths(experiment_name, dataset_name, params):
 
 
 if __name__ == "__main__":
-    experiment_name = "experiment3"
+    experiment_name = "experiment1"
     dataset_name = "famous_ply"
-    parameters = Parameters(500,10,60,1,500,10,"n")
-    paths = configure_paths(experiment_name, dataset_name, parameters)
-    run_experiment(parameters, paths)
+
+    for i in range(1, 12):
+        global_points = i * 1000
+        global_iterations = 300
+        parameters = Parameters(global_points,global_iterations,60,0,0,0,"n")
+        paths = configure_paths(experiment_name, dataset_name, parameters)
+        run_experiment(parameters, paths)
