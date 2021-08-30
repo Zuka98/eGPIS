@@ -325,10 +325,11 @@ def run_experiment(params, paths):
             f"Object Name: {name}\n" \
             f"{params.get_info()}\n"
          )
+
         #Reconstruct
-        
         result = reconstruct(pcd, params, filename, logfile)
         result.name = filename
+
         #Save mesh into results folder
         if result.pred_mesh:
             o3d.io.write_triangle_mesh(f'{str(paths.objects_path)}/{filename}.obj', result.pred_mesh)
@@ -344,7 +345,7 @@ def run_experiment(params, paths):
             result.gt_mesh = None
             print("GT object for", filename, "Not Found")
 
-        # #Compare Predicted Mesh vs GT and return Chamfer D, SA and G.T S.A
+        #Compare Predicted Mesh vs GT and return Chamfer D, SA and G.T S.A
         logfile.write(str(result.get_summary()))
         logfile.close()
 
@@ -354,6 +355,7 @@ def run_experiment(params, paths):
         results.append(result.get_summary())
     
     dataframe = pd.DataFrame(results, columns = ["Name", "Chamfer D.", "GT S.A.", "Pred. S.A.", "T. Points",  "T. Time(m)", "R. Time(m)"])
+    
     #Save Results
     with open(f'{paths.summary_path}/results.tex', 'w') as file:
         file.write(dataframe.to_latex())

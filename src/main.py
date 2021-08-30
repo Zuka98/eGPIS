@@ -50,13 +50,14 @@ def configure_paths(experiment_name, dataset_name, params):
 
 
 if __name__ == "__main__":
-    experiment_name = "experiment1"
+    experiment_name = "experiment2"
     dataset_name = "famous_ply"
-    for i in range(2, 12):
-        global_points = i * 1000
-        global_iterations = 300
-        parameters = Parameters(global_points,global_iterations,60,0,0,0,"n")
+    points_array = [5000, 10000]
+    global_iterations,local_iterations = 300,300
+
+    for points_density in points_array:
+        global_points, local_points = points_density,points_density
+        parameters = Parameters(global_points,global_iterations,60,1,local_points,local_iterations,"n")
         paths = configure_paths(experiment_name, dataset_name, parameters)
         run_experiment(parameters, paths)
-        print("Sleeping for a little")
-        time.sleep(2)
+    
