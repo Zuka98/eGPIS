@@ -1,1 +1,1 @@
-# GPIS_Octree
+# eGPIS
