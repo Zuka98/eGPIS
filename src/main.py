@@ -9,7 +9,7 @@ def configure_paths(experiment_name, dataset_name, params):
     #Path configurations
     dataset_location = "../datasets"
     dataset_path = os.path.join(dataset_location, dataset_name)
-    gt_path = os.path.join(dataset_location, 'gt')
+    gt_path = f'{dataset_path}_gt'
 
     #Experiment Parameters
     results_path = os.path.join("../results", dataset_name)
@@ -50,14 +50,19 @@ def configure_paths(experiment_name, dataset_name, params):
 
 
 if __name__ == "__main__":
-    experiment_name = "experiment2"
-    dataset_name = "famous_ply"
-    points_array = [5000, 10000]
+    experiment_name = "experiment1"
+    dataset_name = "famous"
+    global_points, local_points = 8000, 9000
     global_iterations,local_iterations = 300,300
-
-    for points_density in points_array:
-        global_points, local_points = points_density,points_density
-        parameters = Parameters(global_points,global_iterations,60,1,local_points,local_iterations,"n")
-        paths = configure_paths(experiment_name, dataset_name, parameters)
-        run_experiment(parameters, paths)
+    parameters = Parameters(
+        global_points, # Global sample size
+        global_iterations, 
+        60, # Grid cube size nxnxn
+        1, # Octree Depth
+        local_points, # Local sample size
+        local_iterations,
+        "n" # Augmentation method --> s=simple, r=radial, n=normal
+    )
+    paths = configure_paths(experiment_name, dataset_name, parameters)
+    run_experiment(parameters, paths)
     
