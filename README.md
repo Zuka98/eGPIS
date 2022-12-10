@@ -2,9 +2,7 @@
 
 <img src="eGPIS_examples.png" width="550">
 
-This is the code for [Enhanced GPIS Learning Based on Local and Global Focus Areas, IEEE Robotics and Automation Letters, 2022]
-
-Dataset link: https://drive.google.com/u/0/uc?id=1CExHFuHvECp06Wc1xp02MRTHTacwUhlw
+This is the code for Enhanced GPIS Learning Based on Local and Global Focus Areas, IEEE Robotics and Automation Letters, 2022.
 
 To download datasets and initialise folders run 
 ```
@@ -17,6 +15,7 @@ To run experiments: run
 cd src
 python3 main.py
 ```
+Dataset link: https://drive.google.com/u/0/uc?id=1CExHFuHvECp06Wc1xp02MRTHTacwUhlw
 
 If you find this code useful in your research, please consider citing:
 
