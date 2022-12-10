@@ -1,6 +1,6 @@
 # Enhanced GPIS Learning Based on Local and Global Focus Areas (eGPIS)
 
-<img src="eGPIS_examples.jpg" width="550">
+<img src="eGPIS_examples.png" width="550">
 
 Dataset link: https://drive.google.com/u/0/uc?id=1CExHFuHvECp06Wc1xp02MRTHTacwUhlw
 
