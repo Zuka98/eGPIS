@@ -52,12 +52,12 @@ def configure_paths(experiment_name, dataset_name, params):
 if __name__ == "__main__":
     experiment_name = "experiment1"
     dataset_name = "famous"
-    global_points, local_points = 8000, 9000
+    global_points, local_points = 6000, 8000
     global_iterations,local_iterations = 300,300
     parameters = Parameters(
         global_points, # Global sample size
         global_iterations, 
-        60, # Grid cube size nxnxn
+        50, # Grid cube size nxnxn
         1, # Octree Depth
         local_points, # Local sample size
         local_iterations,
